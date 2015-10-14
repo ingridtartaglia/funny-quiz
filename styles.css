@@ -6,6 +6,8 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 h1 { font-size: 5em; }
@@ -15,10 +17,24 @@ h1 { font-size: 5em; }
     font-size: 1.25em;
 }
 
-.funny-questions {
+.funny-question::first-letter {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.funny {
     padding: 2em 2em;
     margin-bottom: 2em;
 }
+
+.funny-answers {
+    margin-bottom: 1em;
+    background-color: white;
+    padding: 1em;
+    max-height: 5em;
+}
+
+input[type=radio] { margin: 7px 0 0; }
 
 #question1 { background-color: #DEA6A6 }
 #question2 { background-color: #D9D2AD }
@@ -31,3 +47,8 @@ button {
 }
 
 .result { background-color: #FEBD62 }
+
+.funny-result {
+    background-color: white;
+    padding: 1em;
+}

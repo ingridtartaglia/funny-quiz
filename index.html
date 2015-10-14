@@ -2,6 +2,7 @@
 <head>
     <title>#11 - Funny Quiz</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <link type="text/css" rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -11,45 +12,46 @@
         <h3>What kind of drink you are?</h3>
 
         <div class="row row-content">
-            <div class="col-xs-12">
-                <section class="funny-questions" id="question1">
-                    <p>1. What do you want to eat?</p>
-                    <div class="radio" ng-repeat="answer in question1Answers">
-                        <label><input type="radio" ng-model="answers[0]" ng-value="{{answer.value}}">{{answer.title}}
+            <div class="col-xs-12 col-lg-4 col-sm-6 col-lg-offset-4 col-sm-offset-3">
+                <section class="funny" id="question1">
+                    <p class="funny-question">1. What do you want to eat?</p>
+                    <div class="radio funny-answers" ng-repeat="answer in question1Answers">
+                        <label>
+                            <input type="radio" ng-model="answers[0]" ng-value="{{answer.value}}">{{answer.title}}
                         </label>
                     </div>
                 </section>
 
-                <section class="funny-questions" id="question2">
-                    <p>2. Where do you want to travel?</p>
-                    <div class="radio" ng-repeat="answer in question2Answers">
+                <section class="funny" id="question2">
+                    <p class="funny-question">2. Where do you want to travel?</p>
+                    <div class="radio funny-answers" ng-repeat="answer in question2Answers">
                         <label>
                             <input type="radio" ng-model="answers[1]" ng-value="{{answer.value}}">{{answer.title}}
                         </label>
                     </div>
                 </section>
 
-                <section class="funny-questions" id="question3">
-                    <p>3. What's your favorite place to drink?</p>
-                    <div class="radio" ng-repeat="answer in question3Answers">
+                <section class="funny" id="question3">
+                    <p class="funny-question">3. What's your favorite place to drink?</p>
+                    <div class="radio funny-answers" ng-repeat="answer in question3Answers">
                         <label>
                             <input type="radio" ng-model="answers[2]" ng-value="{{answer.value}}">{{answer.title}}
                         </label>
                     </div>
                 </section>
 
-                <section class="funny-questions" id="question4">
-                    <p>4. Who do you want to drink with?</p>
-                    <div class="radio" ng-repeat="answer in question4Answers">
+                <section class="funny" id="question4">
+                    <p class="funny-question">4. Who do you want to drink with?</p>
+                    <div class="radio funny-answers" ng-repeat="answer in question4Answers">
                         <label>
                             <input type="radio" ng-model="answers[3]" ng-value="{{answer.value}}">{{answer.title}}
                         </label>
                     </div>
                 </section>
 
-                <section class="funny-questions" id="question5">
-                    <p>5- Why are you drinking?</p>
-                    <div class="radio" ng-repeat="answer in question5Answers">
+                <section class="funny" id="question5">
+                    <p class="funny-question">5. Why are you drinking?</p>
+                    <div class="radio funny-answers" ng-repeat="answer in question5Answers">
                         <label>
                             <input type="radio" ng-model="answers[4]" ng-value="{{answer.value}}">{{answer.title}}
                         </label>
@@ -58,24 +60,28 @@
 
             </div>
 
-            <div class="text-center">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
                 <button type="button" class="btn btn-primary btn-lg" ng-click="seeFinalResult()"
                     ng-disabled="!(answers[0] && answers[1] && answers[2] && answers[3] && answers[4])">Submit</button>
             </div>
         </div>
 
         <div class="row row-content" style="margin-left:0px; margin-right:0px;">
-            <div class="col-xs-12 funny-questions result" ng-show="quizEndedWater">
-                <p>Result: Water</p>
+            <div class="col-xs-12 col-lg-4 col-sm-6 col-lg-offset-4 col-sm-offset-3 funny result"
+                    ng-show="quizEndedWater">
+                <p class="funny-result">Result:<br>You are <strong>Water</strong>!!!</p>
             </div>
-            <div class="col-xs-12 funny-questions result" ng-show="quizEndedBeer">
-                <p>Result: Beer</p>
+            <div class="col-xs-12 col-lg-4 col-sm-6 col-lg-offset-4 col-sm-offset-3 funny result"
+                ng-show="quizEndedBeer">
+                <p class="funny-result">Result:<br>You are <strong>Beer</strong>!!!</p>
             </div>
-            <div class="col-xs-12 funny-questions result" ng-show="quizEndedWine">
-                <p>Result: Wine</p>
+            <div class="col-xs-12 col-lg-4 col-sm-6 col-lg-offset-4 col-sm-offset-3 funny result"
+                ng-show="quizEndedWine">
+                <p class="funny-result">Result:<br>You are <strong>Wine</strong>!!!</p>
             </div>
-            <div class="col-xs-12 funny-questions result" ng-show="quizEndedVodka">
-                <p>Result: Vodka</p>
+            <div class="col-xs-12 col-lg-4 col-sm-6 col-lg-offset-4 col-sm-offset-3 funny result"
+                ng-show="quizEndedVodka">
+                <p class="funny-result">Result:<br>You are <strong>Vodka</strong>!!!</p>
             </div>
         </div>
 

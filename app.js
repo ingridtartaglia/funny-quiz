@@ -9,14 +9,14 @@ funnyQuizApp.controller("funnyQuizCtrl", function($scope){
 
     $scope.question1Answers = _.shuffle([
         { title: "Something healthy", type: "water", value: 1 },
-        { title: "Junkie foods", type: "beer", value: 2 },
-        { title: "Meats, sea fruits or anything with cheese", type: "wine", value: 3 },
+        { title: "Barbecue", type: "beer", value: 2 },
+        { title: "Pasta", type: "wine", value: 3 },
         { title: "Fruits", type: "vodka", value: 4 },
     ]);
     $scope.question2Answers = _.shuffle([
         { title: "France", type: "water", value: 1 },
         { title: "Belgium", type: "beer", value: 2 },
-        { title: "Portugal", type: "wine",value: 3 },
+        { title: "Portugal", type: "wine", value: 3 },
         { title: "Russia", type: "vodka", value: 4 },
     ]);
     $scope.question3Answers = _.shuffle([
@@ -28,7 +28,7 @@ funnyQuizApp.controller("funnyQuizCtrl", function($scope){
     $scope.question4Answers = _.shuffle([
         { title: "With myself", type: "water", value: 1 },
         { title: "Friends", type: "beer", value: 2 },
-        { title: "Boyfriend/Girlfriend", type: "wine", value: 3 },
+        { title: "Boyfriend or girlfriend", type: "wine", value: 3 },
         { title: "Who cares?", type: "vodka", value: 4 },
     ]);
     $scope.question5Answers = _.shuffle([
