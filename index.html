@@ -11,43 +11,44 @@
         <p class="lead">What kind of drink you are?</p>
 
         <div class="row">
-            <div class="col-xs-12 funny-questions" id="funny-question-1">
+            <div class="col-xs-12 funny-questions">
                 <p>1- What do you want to eat?</p>
                 <div class="radio" ng-repeat="answer in question1Answers">
                     <label>
-                        <input type="radio" ng-model="question1.checked" ng-value="{{answer.value}}">{{answer.title}}
+                        <input type="radio" ng-model="answers[0]" ng-value="{{answer.value}}">{{answer.title}}
                     </label>
                 </div>
 
                 <p>2- Where do you want to travel?</p>
                 <div class="radio" ng-repeat="answer in question2Answers">
                     <label>
-                        <input type="radio" ng-model="question2.checked" ng-value="{{answer.value}}">{{answer.title}}
+                        <input type="radio" ng-model="answers[1]" ng-value="{{answer.value}}">{{answer.title}}
                     </label>
                 </div>
 
                 <p>3- What's your favorite place to drink?</p>
                 <div class="radio" ng-repeat="answer in question3Answers">
                     <label>
-                        <input type="radio" ng-model="question3.checked" ng-value="{{answer.value}}">{{answer.title}}
+                        <input type="radio" ng-model="answers[2]" ng-value="{{answer.value}}">{{answer.title}}
                     </label>
                 </div>
 
                 <p>4- Who do you want to drink with?</p>
                 <div class="radio" ng-repeat="answer in question4Answers">
                     <label>
-                        <input type="radio" ng-model="question4.checked" ng-value="{{answer.value}}">{{answer.title}}
+                        <input type="radio" ng-model="answers[3]" ng-value="{{answer.value}}">{{answer.title}}
                     </label>
                 </div>
 
                 <p>5- Why are you drinking?</p>
                 <div class="radio" ng-repeat="answer in question5Answers">
                     <label>
-                        <input type="radio" ng-model="question5.checked" ng-value="{{answer.value}}">{{answer.title}}
+                        <input type="radio" ng-model="answers[4]" ng-value="{{answer.value}}">{{answer.title}}
                     </label>
                 </div>
             </div>
-
+            <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="seeFinalResult()"
+                    ng-disabled="!answers[0] && !answers[1] && !answers[2] && !answers[3] && !answers[4]">Submit</button>
         </div>
 
         <div class="row">

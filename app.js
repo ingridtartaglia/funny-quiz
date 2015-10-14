@@ -7,50 +7,54 @@ funnyQuizApp.controller("funnyQuizCtrl", function($scope){
     $scope.quizEndedVodka = false;
 
     $scope.question1Answers = _.shuffle([
-        { title: "Meats, sea fruits or anything with cheese", value: "1" },
-        { title: "Junkie foods", value: "2" },
-        { title: "Something healthy", value: "3" },
-        { title: "Fruits", value: "4" },
+        { title: "Something healthy", type: "water", value: 1 },
+        { title: "Junkie foods", type: "beer", value: 2 },
+        { title: "Meats, sea fruits or anything with cheese", type: "wine", value: 3 },
+        { title: "Fruits", type: "vodka", value: 4 },
     ]);
     $scope.question2Answers = _.shuffle([
-        { title: "Portugal", value: "1" },
-        { title: "Belgium", value: "2" },
-        { title: "France", value: "3" },
-        { title: "Russia", value: "4" },
+        { title: "France", type: "water", value: 1 },
+        { title: "Belgium", type: "beer", value: 2 },
+        { title: "Portugal", type: "wine",value: 3 },
+        { title: "Russia", type: "vodka", value: 4 },
     ]);
     $scope.question3Answers = _.shuffle([
-        { title: "Dinner", value: "1" },
-        { title: "Night Club", value: "2" },
-        { title: "Anywhere", value: "3" },
-        { title: "Bar", value: "4" },
+        { title: "Anywhere", type: "water", value: 1 },
+        { title: "Night Club", type: "beer", value: 2 },
+        { title: "Dinner", type: "wine", value: 3 },
+        { title: "Bar", type: "vodka", value: 4 },
     ]);
     $scope.question4Answers = _.shuffle([
-        { title: "Boyfriend/Girlfriend", value: "1" },
-        { title: "Friends", value: "2" },
-        { title: "With myself", value: "3" },
-        { title: "Who cares?", value: "4" },
+        { title: "With myself Boyfriend/Girlfriend", type: "water", value: 1 },
+        { title: "Friends", type: "beer", value: 2 },
+        { title: "Boyfriend/Girlfriend", type: "wine", value: 3 },
+        { title: "Who cares?", type: "vodka", value: 4 },
     ]);
     $scope.question5Answers = _.shuffle([
-        { title: "Because I just wanna relax.", value: "1" },
-        { title: "Because I'm celebrating!", value: "2" },
-        { title: "Because yes.", value: "3" },
-        { title: "Because it's weekend!", value: "4" },
+        { title: "Because yes", type: "water", value: 1 },
+        { title: "Because I'm celebrating!", type: "beer", value: 2 },
+        { title: "Because I just wanna relax.", type: "wine", value: 3 },
+        { title: "Because it's weekend!", type: "vodka", value: 4 },
     ]);
 
+    $scope.answers = [];
 
-    //
-    //
-    // if () {
-    //     $scope.quizEndedWater = true;
-    // }
-    // else if (){
-    //     $scope.quizEndedBeer = true;
-    // }
-    // else if (){
-    //     $scope.quizEndedWine = true;
-    // }
-    // else {
-    //     $scope.quizEndedVodka = true;
-    // }
+    var finalResult = _.chain($scope.answers).countBy().pairs().max(_.last).head().value();
+
+    $scope.seeFinalResult = function(){
+        if (finalResult == 1) {
+            $scope.quizEndedWater = true;
+        }
+        else if (finalResult == 2) {
+            $scope.quizEndedBeer = true;
+        }
+        else if (finalResult == 3) {
+            $scope.quizEndedWine = true;
+        }
+        else if (finalResult == 4) {
+            $scope.quizEndedVodka = true;
+        }
+    }
+
 
 });
