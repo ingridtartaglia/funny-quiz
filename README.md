@@ -7,3 +7,4 @@ Technologies used:
 - CSS
 - JavaScript (AngularJS)
 - Bootstrap
+- Lodash
