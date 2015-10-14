@@ -1,6 +1,7 @@
 var funnyQuizApp = angular.module("funnyQuizApp", []);
 
 funnyQuizApp.controller("funnyQuizCtrl", function($scope){
+    $scope.answers = [undefined,undefined,undefined,undefined,undefined];
     $scope.quizEndedWater = false;
     $scope.quizEndedBeer = false;
     $scope.quizEndedWine = false;
@@ -25,7 +26,7 @@ funnyQuizApp.controller("funnyQuizCtrl", function($scope){
         { title: "Bar", type: "vodka", value: 4 },
     ]);
     $scope.question4Answers = _.shuffle([
-        { title: "With myself Boyfriend/Girlfriend", type: "water", value: 1 },
+        { title: "With myself", type: "water", value: 1 },
         { title: "Friends", type: "beer", value: 2 },
         { title: "Boyfriend/Girlfriend", type: "wine", value: 3 },
         { title: "Who cares?", type: "vodka", value: 4 },
@@ -37,11 +38,8 @@ funnyQuizApp.controller("funnyQuizCtrl", function($scope){
         { title: "Because it's weekend!", type: "vodka", value: 4 },
     ]);
 
-    $scope.answers = [];
-
-    var finalResult = _.chain($scope.answers).countBy().pairs().max(_.last).head().value();
-
     $scope.seeFinalResult = function(){
+        var finalResult = _.chain($scope.answers).countBy().pairs().max(_.last).head().value();
         if (finalResult == 1) {
             $scope.quizEndedWater = true;
         }

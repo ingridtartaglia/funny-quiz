@@ -7,3 +7,27 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+h1 { font-size: 5em; }
+
+.row-content {
+    padding: 2em 0;
+    font-size: 1.25em;
+}
+
+.funny-questions {
+    padding: 2em 2em;
+    margin-bottom: 2em;
+}
+
+#question1 { background-color: #DEA6A6 }
+#question2 { background-color: #D9D2AD }
+#question3 { background-color: #A1B8A0 }
+#question4 { background-color: #B0CACF }
+#question5 { background-color: #C6B4DB }
+
+button {
+    border-radius: 0px !important;
+}
+
+.result { background-color: #FEBD62 }
