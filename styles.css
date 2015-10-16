@@ -28,13 +28,10 @@ h1 { font-size: 5em; }
 }
 
 .funny-answers {
-    margin-bottom: 1em;
     background-color: white;
     padding: 1em;
     max-height: 5em;
 }
-
-input[type=radio] { margin: 7px 0 0; }
 
 #question1 { background-color: #DEA6A6 }
 #question2 { background-color: #D9D2AD }
@@ -46,9 +43,13 @@ button {
     border-radius: 0px !important;
 }
 
-.result { background-color: #FEBD62 }
+.result {
+    background-color: #FEBD62;
+    padding: 2em 2em;
+}
 
 .funny-result {
     background-color: white;
     padding: 1em;
+    margin:0;
 }
